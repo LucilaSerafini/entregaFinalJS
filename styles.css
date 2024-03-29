@@ -198,15 +198,14 @@ main {
 }
 
 .cardStyle {
+    text-align: center;
     background-color: #51829B;
     color: #EEEEEE;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
     gap: .15rem;
 }
 
@@ -234,7 +233,8 @@ main {
 }
 
 .cardImg {
-    max-width: 100%;
+    width: 10rem;
+    margin-left: 50px;
 }
 
 /*CARRITO*/

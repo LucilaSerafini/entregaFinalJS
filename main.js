@@ -1,77 +1,129 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Definir constructor para Producto
-    function Producto(nombre, precio, tipo) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.tipo = tipo;
-    }
 
-    // Crear productos
-    const productos = [
-        new Producto('Kingdomino', 1500, 'juego'),
-        new Producto('Burako', 1800, 'juego'),
-        new Producto('Catan', 2000, 'juego'),
-        new Producto('Dables', 1200, 'juego'),
-        new Producto('DigaloConMemes', 1000, 'juego'),
-        new Producto('Estanciero', 2200, 'juego'),
-        new Producto('Monopoly', 2500, 'juego'),
-        new Producto('Munchkin', 1700, 'juego'),
-        new Producto('Teg', 2300, 'juego'),
-        new Producto('Uno', 800, 'juego')
-    ];
+// JUEGOS
+const productos = [
+    {
+        id:'Kingdomino',
+        titulo: 'Kingdomino',
+        imagen: './resources/kingdomino.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Kingdomino'
+        },
+        precio: 1500
+    },
+    {
+        id:'Burako',
+        titulo: 'Burako',
+        imagen: './resources/burako.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Burako'
+        },
+        precio: 1500
+    },
+    {
+        id:'Catan',
+        titulo: 'Catan',
+        imagen: './resources/catan.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Catan'
+        },
+        precio: 1500
+    },
+    {
+        id:'Dables',
+        titulo: 'Dables',
+        imagen: './resources/dables.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Dables'
+        },
+        precio: 1500
+    },
+    {
+        id:'DigaloConMemes',
+        titulo: 'DigaloConMemes',
+        imagen: './resources/digaloConMemes.png',
+        categoría: {
+            nombre: 'juegos',
+            id: 'DigaloConMemes'
+        },
+        precio: 1500
+    },
+    {
+        id:'Estanciero',
+        titulo: 'Estanciero',
+        imagen: './resources/estanciero.png',
+        categoría: {
+            nombre: 'juegos',
+            id: 'Estanciero'
+        },
+        precio: 1500
+    },
+    {
+        id:'Monopoly',
+        titulo: 'Monopoly',
+        imagen: './resources/monopoly.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Monopoly'
+        },
+        precio: 1500
+    },
+    {
+        id:'Munchkin',
+        titulo: 'Munchkin',
+        imagen: './resources/munchkin.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Munchkin'
+        },
+        precio: 1500
+    },
+    {
+        id:'Teg',
+        titulo: 'Teg',
+        imagen: './resources/teg.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Teg'
+        },
+        precio: 1500
+    },
+    {
+        id:'Uno',
+        titulo: 'Uno',
+        imagen: './resources/uno.png',
+        categoria: {
+            nombre: 'juegos',
+            id: 'Uno'
+        },
+        precio: 1500
+    },
 
-    // Obtener botones de agregar al carrito
-    const botonesAgregarCarrito = document.querySelectorAll('.btn');
+]
 
-    // Inicializar carrito
-    const carrito = [];
+ const contenedorProductos = document.querySelector('#contenedor-productos');
 
-    // Agregar evento a cada botón de agregar al carrito
-    botonesAgregarCarrito.forEach((boton, index) => {
-        boton.addEventListener('click', () => {
-            const producto = document.getElementById("busqueda");
-            const valorProducto = producto.value;
-            console.log('Valor: ', valorProducto);
-            agregarAlCarrito(valorProducto);
-        });
+ function cargarProductos() {
+    productos.forEach(producto => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <img class="cardImg" src="${producto.imagen}" alt="${producto.titulo}">
+            <div class="cardStyle">
+                <h5 class="card-title">${producto.titulo}</h5>
+                <p class="card-text">$${producto.precio} </p>
+                <button class="card-btn agregarAlCarrito" data-id="${producto.id}">AGREGAR</button>
+            </div>
+        `;
+        contenedorProductos.append(div);
     });
+}
 
-    if (localStorage.cantidad) {
-        console.log('Hay cantidad:', localStorage.cantidad);
-        const unidadesStorage = document.querySelector('.productos');
-        unidadesStorage.textContent = localStorage.cantidad;
-    }
 
-    if (localStorage.importe) {
-        console.log('Hay importe:', localStorage.importe);
-        const importeStorage = document.querySelector('.importe');
-        importeStorage.textContent = localStorage.importe;
-    }
-    
 
-    // Función para agregar producto al carrito
-    function agregarAlCarrito(valorProducto) {
-        const productoFiltrado = productos.filter((producto) => producto.nombre === valorProducto);
-        console.log('Producto filtrado', productoFiltrado);
-        if (productoFiltrado.length > 0) {
-            carrito.push(productoFiltrado[0]);
-            actualizarProductosCarrito();
-            calcularTotal();
-        }
-    }
+cargarProductos();
 
-    // Función para actualizar cantidad de productos en el carrito
-    function actualizarProductosCarrito() {
-        const unidadesProductos = document.querySelector('.productos');
-        unidadesProductos.textContent = carrito.length;
-        localStorage.setItem('cantidad', carrito.length);
-    }
 
-    // Función para calcular el total de la compra
-    function calcularTotal() {
-        const importeTotal = carrito.reduce((total, producto) => total + producto.precio, 0);
-        const importeElemento = document.querySelector('.importe');
-        importeElemento.textContent = `$${importeTotal.toFixed(2)}`;
-        localStorage.setItem('importe', importeElemento.textContent);
-    }
-});
+
