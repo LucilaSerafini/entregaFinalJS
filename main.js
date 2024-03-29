@@ -121,8 +121,6 @@ const productos = [
     });
 }
 
-
-
 cargarProductos();
 
 
