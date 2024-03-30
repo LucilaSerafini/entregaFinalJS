@@ -121,6 +121,7 @@ main {
 }
 
 .navBar-button {
+    width: 100%;
     background-color: transparent;
     border: 0;
     color: #EEEEEE;
