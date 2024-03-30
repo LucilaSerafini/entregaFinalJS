@@ -118,32 +118,33 @@ function actualizarBotonesAgregar() {
 
 //Array para agregar al carrito los ítems que se seleccionen
 
-const productosAgregadosACarrito = [];
+
+const productosEnCarrito = [];
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-    if(productosAgregadosACarrito.some(producto => producto.id === idBoton)) {
+    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
         //hay que buscar sie l producto agregado ya existe en el carrito para no duplicarlo, sólo aumentar la cantidad
-        const index = productosAgregadosACarrito.findIndex(producto => producto.id === idBoton);
-        productosAgregadosACarrito[index].cantidad++;
+        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+        productosEnCarrito[index].cantidad++;
 
     } else {
         productoAgregado.cantidad = 1;
-        productosAgregadosACarrito.push(productoAgregado);
+        productosEnCarrito.push(productoAgregado);
     }
 
     actualizarNumeroCarrito();
 
     //Local Storage del array del carrito para poder llevarlo a la página de carrito
 
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosAgregadosACarrito));
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
 //Función para que se actualice el número del carrito en el index 
 function actualizarNumeroCarrito() {
-    const numeroCarritoMenu = productosAgregadosACarrito.reduce((acc, producto)=> acc + producto.cantidad, 0);
+    const numeroCarritoMenu = productosEnCarrito.reduce((acc, producto)=> acc + producto.cantidad, 0);
     numeroCarrito.innerText = numeroCarritoMenu;
 }
 

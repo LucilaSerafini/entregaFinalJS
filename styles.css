@@ -74,7 +74,8 @@ main {
     padding: 3rem;
 }
 
-.productsTitle {
+.productsTitle,
+.cart-title {
     color: #51829B;
     font-size: x-large;
     font-weight: bold;
