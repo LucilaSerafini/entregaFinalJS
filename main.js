@@ -1,4 +1,3 @@
-
 // JUEGOS
 const productos = [
     {
@@ -69,6 +68,7 @@ const productos = [
  const botonesMenu = document.querySelectorAll('.boton-menu');
  let botonesAgregarAlCarrito = document.querySelectorAll(".agregarAlCarrito");
  const numeroCarrito = document.querySelector("#numero-carrito");
+ const botonBusqueda = document.querySelector("#boton-busqueda");
 
 
 
@@ -118,8 +118,21 @@ function actualizarBotonesAgregar() {
 
 //Array para agregar al carrito los ítems que se seleccionen
 
+//Se traen los productos de carrito para que no se reinicie cada vez que apretamos seguir comprando
 
-const productosEnCarrito = [];
+let productosEnCarrito;
+let productosEnCarritoLS; 
+
+ productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+
+if(productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse (productosEnCarritoLS);
+    actualizarNumeroCarrito();
+    
+} else {
+    productosEnCarrito = [];
+}
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
@@ -145,7 +158,24 @@ function agregarAlCarrito(e) {
 //Función para que se actualice el número del carrito en el index 
 function actualizarNumeroCarrito() {
     const numeroCarritoMenu = productosEnCarrito.reduce((acc, producto)=> acc + producto.cantidad, 0);
-    numeroCarrito.innerText = numeroCarritoMenu;
+    localStorage.setItem("cantidad-productos", numeroCarritoMenu);
+    numeroCarrito.innerText = localStorage.getItem("cantidad-productos");
+}
+
+//Barra de búsqueda 
+
+botonBusqueda.addEventListener('click', buscarProducto);
+
+function buscarProducto() {
+    const valorInput = document.getElementById("busqueda").value;
+    // Si hay algo en la caja de busqueda filtro, sino muestro todos los productos
+    if (valorInput) {
+        const productosFiltrados = productos.filter((producto) => producto.titulo.toLowerCase().includes(valorInput.toLowerCase()));
+
+        cargarProductos(productosFiltrados);
+    } else {
+        cargarProductos(productos);
+    }
 }
 
 
