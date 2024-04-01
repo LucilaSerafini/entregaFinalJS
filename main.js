@@ -164,8 +164,6 @@ function actualizarNumeroCarrito() {
 
 //Barra de búsqueda 
 
-botonBusqueda.addEventListener('click', buscarProducto);
-
 function buscarProducto() {
     const valorInput = document.getElementById("busqueda").value;
     // Si hay algo en la caja de busqueda filtro, sino muestro todos los productos
