@@ -1,70 +1,15 @@
 
-// JUEGOS
-const productos = [
-    {
-        id:'Kingdomino',
-        titulo: 'Kingdomino',
-        imagen: './resources/kingdomino.png',
-        precio: 1500
-    },
-    {
-        id:'Burako',
-        titulo: 'Burako',
-        imagen: './resources/burako.png',
-        precio: 1500
-    },
-    {
-        id:'Catan',
-        titulo: 'Catan',
-        imagen: './resources/catan.png',
-        precio: 1500
-    },
-    {
-        id:'Dables',
-        titulo: 'Dables',
-        imagen: './resources/dables.png',
-        precio: 1500
-    },
-    {
-        id:'DigaloConMemes',
-        titulo: 'DigaloConMemes',
-        imagen: './resources/digaloConMemes.png',
-        precio: 1500
-    },
-    {
-        id:'Estanciero',
-        titulo: 'Estanciero',
-        imagen: './resources/estanciero.png',
-        precio: 1500
-    },
-    {
-        id:'Monopoly',
-        titulo: 'Monopoly',
-        imagen: './resources/monopoly.png',
-        precio: 1500
-    },
-    {
-        id:'Munchkin',
-        titulo: 'Munchkin',
-        imagen: './resources/munchkin.png',
-        precio: 1500
-    },
-    {
-        id:'Teg',
-        titulo: 'Teg',
-        imagen: './resources/teg.png',
-        precio: 1500
-    },
-    {
-        id:'Uno',
-        titulo: 'Uno',
-        imagen: './resources/uno.png',
-        precio: 1500
-    },
-    
-    
 
-]
+//Fetch
+
+let productos = [];
+
+fetch("./js/productos.json")
+    .then (response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 //Linkeo con HTML 
  const contenedorProductos = document.querySelector('#contenedor-productos');
@@ -197,5 +142,6 @@ function buscarProducto() {
         cargarProductos(productos);
     }
 }
+
 
 
