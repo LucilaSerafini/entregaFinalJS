@@ -18,27 +18,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="./styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-            const options = {
-                mixColor: '#EEEEEE', // default: '#fff'
-                backgroundColor: '#EADFB4',  // default: '#fff'
-                label: '<i class="bi bi-moon-stars-fill"></i>', // default: ''
-                buttonColorDark: '#51829B',  // default: '#100f2c'
-                buttonColorLight: '#EEEEEE', // default: '#fff'
-            }
-            new Darkmode(options).showWidget();
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
+    
 </head>
 
 <body>
     <div class="index-container">
         <aside>
             <header>
+                <button id="color-mode" class="color-button"><i class="bi bi-moon-stars-fill"></i></button>
                 <img class="mainIcon" src="./resources/mainIcon.png" alt="">
                 <h1 class="mainTitle">Juegoteca Mulán</h1>
             </header>
@@ -48,7 +37,7 @@
                         <input id="busqueda" class="searchBar me-2" type="search" aria-label="Search">
                     </div>
                     <button class="searchButton" onclick="buscarProducto()"><i class="bi bi-search"></i> </button>
-                              
+                    
                 </div>
                 <ul class="menu">
                     <li>

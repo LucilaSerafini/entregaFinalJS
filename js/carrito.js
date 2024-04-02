@@ -128,3 +128,40 @@ function realizarCompra() {
 
 }
 
+//Dark Mode
+
+// Obtener el botón de cambio de modo y el cuerpo del documento
+const colorModeBtn = document.getElementById('color-mode');
+const body = document.body;
+
+// Función para activar el modo oscuro
+function activarDarkMode() {
+    body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'activado'); // Guardar el estado del modo en el almacenamiento local
+}
+
+// Función para desactivar el modo oscuro
+function desactivarDarkMode() {
+    body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'desactivado'); // Guardar el estado del modo en el almacenamiento local
+}
+
+// Verificar el estado del modo al cargar la página
+window.onload = function() {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'activado') {
+        activarDarkMode();
+    } else {
+        desactivarDarkMode();
+    }
+}
+
+// Agregar un evento de clic al botón de cambio de modo
+colorModeBtn.addEventListener('click', () => {
+    // Alternar entre activar y desactivar el modo oscuro
+    if (body.classList.contains('dark-mode')) {
+        desactivarDarkMode();
+    } else {
+        activarDarkMode();
+    }
+});
