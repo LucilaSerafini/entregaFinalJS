@@ -54,6 +54,7 @@ aside {
     color: #EEEEEE;
     position: sticky;
     height: 100vh;
+    margin-bottom: 150px;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -182,7 +183,7 @@ main {
 .footer-text {
     color: #9BB0C1;
     font-size: .85rem;
-    margin-top: 1rem;
+    margin-top: 7rem;
     text-align: center;
 }
 
