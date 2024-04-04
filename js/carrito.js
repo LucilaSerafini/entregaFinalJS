@@ -10,7 +10,7 @@ const contenedorCarritoProductos = document.querySelector('#carrito-productos');
 const contenedorCarritoAcciones = document.querySelector('#carrito-acciones');
 const contenedorCarritoComprado = document.querySelector('#carrito-comprado');
 let botonEliminarProductos = document.querySelectorAll('.cartItem-delete');
-let botonVaciarCarrito = document.querySelector('.cartActions-clearOut');
+let botonVaciarCarrito = document.querySelector('.clearOut');
 let totalCompra = document.querySelector("#total");
 let botonComprar = document.querySelector(".cartActions-buy");
 
