@@ -8,6 +8,7 @@ fetch("./js/productos.json")
     .then(data => {
         productos = data;
         cargarProductos(productos);
+
     })
 
 //Linkeo con HTML 
@@ -18,9 +19,8 @@ const numeroCarrito = document.querySelector("#numero-carrito");
 let toastify = document.querySelector('.toastify');
 let botonVaciarCarrito = document.querySelector('#clearOut');
 let botonComprar = document.querySelector(".boton-comprar");
-let botonCarrito = document.querySelector("#carrito-icon");
-let botonCerrarCarrito = document.querySelector(".cerrar");
-let contenedorCarrito = document.querySelector("#carrito-container");
+
+ 
 
 
 
@@ -54,11 +54,13 @@ function cargarProductos(listaProductos) {
                 </div>
             `;
             contenedorProductos.append(div);
+
     }
     
 }
 
 cargarProductos(productos);
+
 
 
 //Botones de Menú - se cambia la etiqueta active dependiendo de en qué botón se haga click
@@ -132,6 +134,7 @@ function actualizarNumeroCarrito() {
     localStorage.setItem("cantidad-productos", numeroCarritoMenu);
     numeroCarrito.innerText = localStorage.getItem("cantidad-productos");
 
+    cargarProductosCarrito();
 }
 
 function buscarProducto() {
@@ -151,6 +154,8 @@ function cargarProductosCarrito() {
     if (productosEnCarrito.length > 0) {
         productosEnCarrito.forEach((producto) => {
             const divCarrito = document.createElement("div");
+            let total = calcularTotal();
+            console.log('TOTAL', total);
             divCarrito.innerHTML = `
                 <div class = "carrito-producto">
                     <div class= cart-item>
@@ -162,7 +167,7 @@ function cargarProductosCarrito() {
                         <button class="cartItem-delete" id= ${producto.id}><i class="bi bi-trash3"></i></button>
                         <div class="carrito-footer">
                         <button class="boton-comprar">FINALIZAR COMPRA</button>
-                        <p id="total">$</p>
+                        <p id="total">$${total}</p>
 
                     </div>
 
@@ -203,24 +208,24 @@ function vaciarCarrito() {
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     cargarProductosCarrito();
-
+    actualizarTotal();
 
 }
 
 //Actualizar total de la compra 
 
-if(productosEnCarrito.length = 0){
-        contenedorCarrito.classList.add("cerrado");
-} 
+function actualizarTotal() {
+    let totalCompra = document.querySelector("#total");
+    const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    totalCompra.innerText = `$${totalCalculado.toFixed(2)}`; 
+}
+
+function calcularTotal() {
+    return productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+}
 
 
-botonCerrarCarrito.addEventListener("click", function() {
-    contenedorCarrito.classList.add("cerrado");
-})
 
-botonCarrito.addEventListener("click", function() {
-    contenedorCarrito.classList.remove("cerrado");
-})
 
 //Dark Mode
 
