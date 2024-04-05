@@ -16,7 +16,8 @@
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Toastify-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
@@ -55,11 +56,6 @@
                     <li>
                         <button class="navBar-button boton-menu"><i class="bi bi-dice-4"></i>CONTACTO</button>
                     </li>
-                    <li>
-                        <a class="navBar-button cart-button" href="./carrito.html">
-                            <i class="bi bi-cart2"></i>CARRITO: <span id="numero-carrito"
-                                class="numero-carrito">0</span></a>
-                    </li>
                 </ul>
             </nav>
             <footer>
@@ -69,17 +65,18 @@
         <main>
             <h2 class="productsTitle"> Todos los productos</h2>
             <button id="carrito-icon" class="bi bi-cart2"></button>
+            <span id="numero-carrito"class="numeroCarrito">0</span></a>
             <div id="contenedor-productos" class="cardsContainer">
                 <!--Los productos van a aparecer con JS-->
             </div>
         
-            <div id="carrito-container" class="carritoContainer">
+            <div id="carrito-container" class="carritoContainer cerrado">
                 <div class="carrito-titulo">
                     <h4>Carrito</h4>
                     <div class="vaciar" id="clearOut">Vaciar carrito</div>
                     <div class="cerrar" id="cerrarCarrito"><i class="fas fa-times"></i></div>
                 </div>
-                <div id="carrito-productos" class="cart-container">
+                <div id="carrito-productos" class="cart-container total-margin">
                     <!--Los productos van a aparecer con JS-->
                     
                      <div class="carrito-producto"></div>

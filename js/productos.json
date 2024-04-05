@@ -3,60 +3,60 @@
         "id":"Kingdomino",
         "titulo":"Kingdomino",
         "imagen": "./resources/kingdomino.png",
-        "precio": 1500
+        "precio": 15000
     },
     {
         "id":"Burako",
         "titulo": "Burako",
         "imagen": "./resources/burako.png",
-        "precio": 1500
+        "precio": 26000
     },
     {
-        "id":"catan",
-        "titulo": "catan",
+        "id":"Catan",
+        "titulo": "Catan",
         "imagen": "./resources/catan.png",
-        "precio": 1500
+        "precio": 60000
     },
     {
         "id":"Dables",
         "titulo": "Dables",
         "imagen": "./resources/dables.png",
-        "precio": 1500
+        "precio": 6000
     },
     {
         "id":"DigaloConMemes",
         "titulo": "DigaloConMemes",
         "imagen": "./resources/digaloConMemes.png",
-        "precio": 1500
+        "precio": 12000
     },
     {
         "id":"Estanciero",
         "titulo": "Estanciero",
         "imagen": "./resources/estanciero.png",
-        "precio": 1500
+        "precio": 35000
     },
     {
-        "id":"Monopoly'",
-        "titulo": "Monopoly'",
+        "id":"Monopoly",
+        "titulo": "Monopoly",
         "imagen": "./resources/monopoly.png",
-        "precio": 1500
+        "precio": 50000
     },
     {
         "id":"Munchkin",
         "titulo": "Munchkin",
         "imagen": "./resources/munchkin.png",
-        "precio": 1500
+        "precio": 25000
     },
     {
         "id":"Teg",
         "titulo": "Teg",
         "imagen": "./resources/teg.png",
-        "precio": 1500
+        "precio": 36000
     },
     {
         "id":"Uno",
         "titulo": "Uno",
         "imagen": "./resources/uno.png",
-        "precio": 1500
+        "precio": 7000
     }
 ]

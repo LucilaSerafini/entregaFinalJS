@@ -98,6 +98,21 @@ main {
     border-radius: 15px;
 }
 
+.numeroCarrito{
+    position: fixed;
+    bottom: 100px;
+    right: 120px;
+    background-color: #071952;
+    color: #EEEEEE;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carritoContainer {
     position: fixed;
     z-index: 99;
@@ -108,6 +123,7 @@ main {
     border-radius: 2rem;
     background-color: #aaa;
     border-bottom: none;
+    overflow-y: scroll;
 }
 
 .carritoProductos {
@@ -155,22 +171,32 @@ main {
     font-weight: bold;
 
 }
+
+
+.total-margin  {
+    margin-bottom: 50px;
+}
+
 .vaciar:hover {
     color: #071952;
     background-color: #EEEEEE;
 }
 
 .carrito-footer {
-    width: 100%;
+    width: 535px;
     align-content: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     text-align: center;
     background-color: red;
     padding: 10px;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
+    cursor: pointer;
+}
 
+.carrito-productos {
+    margin-bottom: 50px;
 }
 
 
@@ -267,22 +293,11 @@ main {
     box-shadow: 0 -1rem 0 #EEEEEE;
 }
 
-.cart-button {
-    margin-top: 20px;
-}
-
-.numero-carrito {
-    background-color: #EEEEEE;
-    color: #51829B;
-    padding: 0 .25rem;
-    border-radius: .25rem;
-}
-
 
 .footer-text {
     color: #9BB0C1;
     font-size: .85rem;
-    margin-top: 7rem;
+    margin-top: 10rem;
     text-align: center;
 }
 
@@ -377,9 +392,6 @@ main {
     transition: background-color .2s, color .2s;
 }
 
-.cartActions-clearOut:hover {
-    background-color: #265073;
-}
 
 .cartActions-right {
     display: flex;
@@ -415,6 +427,8 @@ main {
     -webkit-transition: visibility 0s .3s, opacity .3s linear;
     transition: visibility 0s .3s, opacity .3s linear;
 }
+
+
 
 /*Clase específica para todo lo que queremos ocultar:*/
 
