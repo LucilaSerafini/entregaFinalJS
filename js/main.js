@@ -162,7 +162,7 @@ function cargarProductosCarrito() {
         const divTotal = document.createElement("div");
         const total = calcularTotal();
         divTotal.innerHTML = 
-            `<div class="carrito-footer">
+            `<div class="carrito-footer" onclick="comprar()">
                  <p id="boton-finalizar-compra" class="boton-comprar">FINALIZAR COMPRA</p>
                 <p id="total">$${total}</p>
             </div>`;
@@ -173,6 +173,15 @@ function cargarProductosCarrito() {
     }
 }
 
+function comprar() {
+    console.log('Comprar');
+    Swal.fire({
+        title: '¡Compra realizada!',
+        text: 'Gracias por su compra. ¡Vuelva pronto!',
+        icon: 'success'
+    });
+    vaciarCarrito()
+}
 function actualizarBotonesEliminar() {
     botonEliminarProductos = document.querySelectorAll(".cartItem-delete");
     botonEliminarProductos.forEach(boton => {
@@ -191,10 +200,10 @@ function eliminarDelCarrito(e) {
 }
 
 function vaciarCarrito() {
+    actualizarTotal();
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     cargarProductosCarrito();
-    actualizarTotal();
 }
 
 function actualizarTotal() {
@@ -214,18 +223,6 @@ botonCarrito.addEventListener("click", function() {
 botonCerrarCarrito.addEventListener("click", function() {
     contenedorCarrito.classList.add("cerrado");
 })
-
-
-const carritoFooter = document.querySelector(".carrito-footer");
-
-carritoFooter.addEventListener('click', function() {
-    Swal.fire({
-        title: '¡Compra realizada!',
-        text: 'Gracias por su compra. ¡Vuelva pronto!',
-        icon: 'success'
-    });
-    vaciarCarrito()
-});
 
 
 //Dark Mode
