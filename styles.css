@@ -416,37 +416,35 @@ main {
 /*DARKMODE*/
 
 .dark-mode aside {
-    background-color: #071952;
-    color: #EEEEEE;
+    background-color: black;
+    color: #FAF8ED;
 }
 
 
 .dark-mode .searchButton {
-    background-color: #071952;
-    color: #EEEEEE;
+    background-color: #F9B572;
+    color: black;
+    border: black;
 }
 
 .dark-mode .searchButton:hover {
-    background-color: #51829B;
-    color: #EEEEEE;
+    background-color: #99B080;
+    color: black;
 }
 
 
 .dark-mode .header {
-    background-color: #071952;
+    background-color: black;
 }
 .dark-mode .navBar-button.active {
-    background-color: #51829B;
-    color: #EEEEEE;
+    background-color: #99B080;
+    color: black;
 }
 
-.dark-mode .bi-moon-stars-fill{
-background-color: #071952 !important;
+.dark-mode .color-button {
+    background-color: black;
 }
 
-.dark-mode .bi-moon-stars-fill::before{
-    background-color: #071952 !important;
-}
     
 .dark-mode .navBar-button.active::before {
     content: '';
@@ -457,7 +455,7 @@ background-color: #071952 !important;
     right: 0;
     background-color: transparent;
     border-bottom-right-radius: .5rem;
-    box-shadow: 0 1rem 0 #51829B;
+    box-shadow: 0 1rem 0 #99B080;
 }
 
 .dark-mode .navBar-button.active::after {
@@ -469,123 +467,73 @@ background-color: #071952 !important;
     right: 0;
     background-color: transparent;
     border-top-right-radius: .5rem;
-    box-shadow: 0 -1rem 0 #51829B;
+    box-shadow: 0 -1rem 0 #99B080;
 }
 
 .dark-mode main {
-    background-color: #51829B;
+    background-color: #99B080;
     color: #EEEEEE;
+}
+
+.dark-mode .productsTitle {
+    color: black;
 }
 
 .dark-mode .cardsContainer {
-    background-color: #51829B;
+    background-color: #99B080;
     color: #EEEEEE;
 }
 
+.dark-mode .cardStyle {
+    background-color: black;
+    color: #FAF8ED;
+}
+
+.dark-mode .card-title {
+    color: #FAF8ED;
+}
+
+.dark-mode .card-text {
+    color: #FAF8ED;
+}
+
+
 .dark-mode .card-btn {
-    border: 1px solid #51829B;
+    border: 1px solid black;
     color: #071952;
     border: 2px solid #EEEEEE;
 }
 
 .dark-mode .card-btn:hover {
-    background-color: #071952;
-    color: #EEEEEE;
+    background-color: #F9B572;
+    color: black;
 }
 
 .dark-mode .index-container{
-    background-color: #071952;
+    background-color: black;
 }
 
 .dark-mode footer {
-    background-color: #071952;
+    background-color: black;
 }
 .dark-mode .footer-text {
-    color: #9BB0C1;
+    color: #F9B572;
 }
 
 .dark-mode #color-mode {
-    color: #EEEEEE;
+    color: #FAF8ED;
 }
 
 /*Dark Mode - carrito*/
 
-
-.dark-mode .cart-container {
-    color: #EEEEEE;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+.dark-mode #carrito-icon {
+    background-color: black;
+    color: #F9B572;
 }
 
-
-/* Estilos para los productos dentro del carrito en modo oscuro */
-.dark-mode .cart-item {
-    background-color: #071952;
-    color: #EEEEEE;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.dark-mode #carrito-icon:hover {
+    background-color: #F9B572;
+    color: #FAF8ED;
+    transition: .50s;
 }
 
-/* Estilos para los botones del carrito en modo oscuro */
-.dark-mode .cartActions-clearOut {
-    background-color: #071952;
-    color: #EEEEEE;
-    border: 2px solid #51829B;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode .cartActions-clearOut:hover {
-    background-color: #51829B;
-    color: #EEEEEE;
-}
-
-/* Estilos para el botón de comprar en modo oscuro */
-.dark-mode .cartActions-buy {
-    background-color: #51829B;
-    color: #EEEEEE;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode .cartActions-buy:hover {
-    background-color: #071952;
-    color: #EEEEEE;
-}
-
-/* Estilos para el texto de compra exitosa en modo oscuro */
-.dark-mode .purchase-ok,
-.bi-emoji-grin {
-    color: #EEEEEE;
-    font-weight: bold;
-}
-
-
-
-.modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  

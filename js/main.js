@@ -105,8 +105,8 @@ function agregarAlCarrito(e) {
         position: "left", 
         stopOnFocus: true, 
         style: {
-            background: '#9BB0C1',
-            color: '#EEEEEE',
+            background: '#F9B572',
+            color: 'black',
         },
         onClick: function () { } 
     }).showToast();
@@ -224,6 +224,7 @@ carritoFooter.addEventListener('click', function() {
         text: 'Gracias por su compra. ¡Vuelva pronto!',
         icon: 'success'
     });
+    vaciarCarrito()
 });
 
 
