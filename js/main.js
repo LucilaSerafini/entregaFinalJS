@@ -163,7 +163,7 @@ function cargarProductosCarrito() {
         const total = calcularTotal();
         divTotal.innerHTML = 
             `<div class="carrito-footer">
-                 <button id="boton-finalizar-compra" class="boton-comprar">FINALIZAR COMPRA</button>
+                 <p id="boton-finalizar-compra" class="boton-comprar">FINALIZAR COMPRA</p>
                 <p id="total">$${total}</p>
             </div>`;
     
