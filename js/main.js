@@ -74,7 +74,7 @@ function actualizarBotonesAgregar() {
 let productosEnCarrito = [];
 const productosCarritoStorage = JSON.parse(localStorage.getItem("productos-en-carrito"));
 
-if(productosCarritoStorage.length > 0) {
+if((productosCarritoStorage && productosCarritoStorage.length > 0)) {
     productosEnCarrito = Array.from(productosCarritoStorage);
     actualizarNumeroCarrito();
     cargarProductosCarrito();
