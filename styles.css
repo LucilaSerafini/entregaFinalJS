@@ -47,7 +47,17 @@ header {
     margin-left: 80%;
     margin-top: 10px;
     font-size: 1.25rem;
+    animation: moveButton 1.5s ease-in-out infinite alternate;
 }
+
+@keyframes moveButton {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px); /* Ajusta el valor según tu preferencia */
+    }
+}a
 
 .mainIcon {
     max-width: 30%;
